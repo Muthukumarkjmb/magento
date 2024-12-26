@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	
+    <body>
+        <referenceContainer name="content">
+            <block cacheable="false"  name='epi_block' class="Epi\EpiPay\Block\Main" template="Epi_EpiPay::contents.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
+<!-- 
+    Block: The <block> node is used to load our actual blocks. Each block node
+can have the following properties:
+° type: This is the identifier for the actual block class. For example, 
+catalog/product_list makes reference to the Mage_Catalog_
+Block_Product_List.
+° name: This is the name used by other blocks to make a reference to 
+this block.
+° before/after: These properties can be used to position the blocks 
+relative to other block position. Both properties can use a hyphen as 
+value to specify if the module should appear at the very top or the 
+very bottom. 
+° template: This property determines the .phtml template file that 
+will be used to render the block.
+° action: Each block type has specific actions that affect the frontend 
+functionality. For instance, the page/html_head block has actions to 
+add CSS and js (addJs and addCss).
+° as: This used to specify the unique identifier that we will be using to 
+call the block from the template. For example, calling a child block by 
+using getChildHtml('block_name')
+ -->

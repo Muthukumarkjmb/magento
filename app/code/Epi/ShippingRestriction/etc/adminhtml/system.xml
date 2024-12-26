@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="shipping" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="custom_shipping" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shipping Address Restriction</label>
+                <field id="us_states" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select US States</label>
+                    <source_model>Epi\ShippingRestriction\Model\Config\Source\UsStates</source_model>
+                    <comment>Select states within the United States for shipping restriction</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

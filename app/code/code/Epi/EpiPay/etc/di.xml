@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Epi\EpiPay\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Epi\EpiPay\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">EpiPay</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Epi\EpiPay\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- <type name="Magento\Checkout\Model\Cart">
+        <plugin name="test_plugin" type="Epi\EpiPay\Plugins\Inventory" />
+    </type> -->
+    <!-- <type name="\Magento\Catalog\Model\Product">
+        <plugin name="your_module_addtocart" type="Epi\EpiPay\Plugins\Product"
+                sortOrder="10"/>
+    </type> -->
+    <type name="Magento\Wishlist\Controller\Index\Add">
+           <plugin name="AddWishlistRestriction" type="Epi\EpiPay\Plugins\AddWishlist"/>
+       </type>
+</config>

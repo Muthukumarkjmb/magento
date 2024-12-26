@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <referenceContainer name="header.inner.right">
+    <block class="Magento\Backend\Block\Template" name="notification.messages" />
+</referenceContainer>
+    <referenceContainer name="content">
+        <block class="Contactus\ContactForm\Block\Adminhtml\Contactform\Edit" name="contactform.edit" template="Contactus_ContactForm::edit.phtml"/>
+    </referenceContainer>
+</layout>
+
+

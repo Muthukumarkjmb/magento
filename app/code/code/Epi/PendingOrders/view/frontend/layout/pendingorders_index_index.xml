@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	
+    <body>
+        <referenceContainer name="content">
+            <block cacheable="false"  name='pendingorders_block' class="Epi\PendingOrders\Block\Main" template="Epi_PendingOrders::contents.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

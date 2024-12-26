@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <section id="burstonline_dynamicplaceholder" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Dynamic placeholder</label>
+            <tab>burstonline_extensions_tab</tab>
+            <resource>Burstonline_Dynamicplaceholder::config</resource>
+            
+            <group id="burstonline_dynamicplaceholder" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Dynamic placeholder For selected Category</label>
+                <field id="isenabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1">
+                    <label>Enabled ?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="categories" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Category</label>
+					<source_model>Burstonline\Customhome\Model\Source\Category</source_model>
+				</field>
+                <field id="placeholder_image" translate="label" type="image" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Upload Placeholder Image</label>
+					<backend_model>Burstonline\Customconfig\Model\Config\Backend\Image</backend_model>
+					<base_url type="media">burstonline</base_url>
+				</field>
+            </group>
+        </section>
+    </system>
+</config>
+

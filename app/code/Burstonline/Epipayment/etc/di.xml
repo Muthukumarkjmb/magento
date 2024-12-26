@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Define your custom configuration provider -->
+    <type name="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array"/>
+        </arguments>
+    </type>
+    
+    <!-- Define your custom payment method -->
+    <type name="Burstonline\Epipayment\Model\PaymentMethod">
+        <arguments>
+            <argument name="code" xsi:type="string">epipayment</argument>
+        </arguments>
+    </type>
+
+    <!-- Configure plugin for OrderManagementInterface -->
+    <type name="Magento\Sales\Api\OrderManagementInterface">
+        <plugin name="after_place_order_operation" type="Burstonline\Epipayment\Plugin\OrderManagement"/>
+    </type>
+
+    <!-- Configure plugin for InvoiceService
+    <type name="Magento\Sales\Model\Service\InvoiceService">
+        <plugin name="disable_invoice_generation" type="Burstonline\Epipayment\Plugin\InvoiceServicePlugin"/>
+    </type> -->
+
+    <type name="Burstonline\Epipayment\Model\Config\Backend\CustomEncrypted">
+    <arguments>
+        <argument name="resource" xsi:type="object">Magento\Config\Model\ResourceModel\Config</argument>
+    </arguments>
+</type>
+
+
+</config>

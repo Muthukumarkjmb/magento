@@ -1,0 +1,11 @@
+[0;1;31m●[0m elasticsearch.service - Elasticsearch
+     Loaded: loaded (/lib/systemd/system/elasticsearch.service; enabled; vendor preset: enabled)
+     Active: [0;1;31mfailed[0m (Result: signal) since Fri 2024-12-06 22:44:11 IST; 1h 43min ago
+       Docs: https://www.elastic.co
+    Process: 107509 ExecStart=/usr/share/elasticsearch/bin/systemd-entrypoint -p ${PID_DIR}/elasticsearch.pid --quiet [0;1;31m(code=killed, signal=KILL)[0m
+   Main PID: 107509 (code=killed, signal=KILL)
+
+Dec 06 22:44:08 blaze systemd[1]: Starting Elasticsearch...
+Dec 06 22:44:11 blaze systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185melasticsearch.service: Main process exited, code=killed, status=9/KILL[0m
+Dec 06 22:44:11 blaze systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185melasticsearch.service: Failed with result 'signal'.[0m
+Dec 06 22:44:11 blaze systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Elasticsearch.[0m

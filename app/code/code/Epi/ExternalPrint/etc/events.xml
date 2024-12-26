@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+     <event name="sales_order_place_after">
+        <observer name="epi_catalog_tracker_order_placed" instance="Epi\ExternalPrint\Observer\OrderPlaced" />
+    </event>
+    <event name="core_layout_render_before_adminhtml_order_view">
+        <observer name="epi_externalprint_add_remote_print_button" instance="Epi\ExternalPrint\Observer\AddRemotePrintButton" />
+    </event>
+</config>

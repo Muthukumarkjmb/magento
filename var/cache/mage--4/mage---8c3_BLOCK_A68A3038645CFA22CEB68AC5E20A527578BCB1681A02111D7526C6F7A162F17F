@@ -1,0 +1,14 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1734954564;s:6:"expire";i:1735040964;s:4:"tags";s:99:"8c3_CAT_C,8c3_STORE_GROUP,8c3_BLOCK_HTML,8c3_MAGICCART_MAGICMENU,8c3_MAGICCART_MAGICMENU_2,8c3_MAGE";}
+<div class="accordion-container">
+	<div class="meanmenu-accordion" data-menu-init='{"accordion":true, "closedSign":"collapse", "openedSign":"expand", "easing":"easeInOutQuad", "openedActive":true}'>
+		<h3 class="accor-title">Home</h3>
+		<ul class="accordion nav-accordion" >
+			<li class="level0 category-item level-top cat nav-1 "><a class="level-top" href="http://magentonew.com/camera.html"><span>Camera</span><span class="boder-menu"></span></a></li>
+<li class="level0 category-item level-top cat nav-2 "><a class="level-top" href="http://magentonew.com/dslr.html"><span>dslr</span><span class="boder-menu"></span></a></li>
+<li class="level0 category-item level-top cat nav-3 "><a class="level-top" href="http://magentonew.com/watch.html"><span>Watch</span><span class="boder-menu"></span></a></li>		</ul>	
+		<div class="all-cat"><span>All Categories</span><span style="display:none">Close</span></div>
+	</div>
+</div>
+<script type="text/javascript">
+	require(['jquery','easing','magicmenu']);
+</script>

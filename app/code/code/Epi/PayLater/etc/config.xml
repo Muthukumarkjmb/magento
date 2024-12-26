@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ This is configuration of module
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <epipaylater>
+				<active>1</active>
+                <model>Epi\PayLater\Model\PayLaterPaymentMethod</model>
+                <order_status>pending</order_status>
+                <title>PayLater</title>
+			</epipaylater>
+          
+        </payment>
+    </default>
+</config>
+

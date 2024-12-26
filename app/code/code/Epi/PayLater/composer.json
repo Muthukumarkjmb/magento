@@ -1,0 +1,20 @@
+{
+  "name": "epi/paylater-magento-2",
+  "description": "MdsPayLater integration for Magento 2",
+  "type": "magento2-module",
+  "keywords": ["mds", "magento", "magento 2", "plugin", "extension", "payment", "gateway"],
+  "version": "1.0.5",
+  "license": [
+      "MIT"
+  ],
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "magento/framework": ">=100.0.4 <102"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Mds\\PayLater\\": ""
+    }
+  }
+}

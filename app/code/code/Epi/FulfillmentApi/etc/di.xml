@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Epi\FulfillmentApi\Api\Data\LCAPIResponseDataInterface" type="Epi\FulfillmentApi\Model\LCAPIResponse" />
+    <preference for="Epi\FulfillmentApi\Api\Data\OrderResponseDataInterface" type="Epi\FulfillmentApi\Model\OrderResponse" />
+
+    <preference for="Epi\FulfillmentApi\Api\CustomInterface" type="Epi\FulfillmentApi\Model\Api\Custom"/>
+    <preference for="Epi\FulfillmentApi\Api\VoidTransactionInterface" type="Epi\FulfillmentApi\Model\Api\VoidTransactionApi"/>
+    <preference for="Epi\FulfillmentApi\Api\RefundTransactionInterface" type="Epi\FulfillmentApi\Model\Api\RefundTransactionApi"/>
+    <preference for="Epi\FulfillmentApi\Api\OrderInterface" type="Epi\FulfillmentApi\Model\Api\OrderApi"/>
+</config>

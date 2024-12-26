@@ -1,0 +1,21 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\Cart">
+        <plugin name="restrict_add_to_cart_plugin_aroundAddProduct"
+                type="Burstonline\RestrictAddToCart\Plugin\RestrictAddToCartPlugin"
+                sortOrder="10"
+                disabled="false" />
+        <plugin name="restrict_add_to_cart_plugin_aroundUpdateItems"
+                type="Burstonline\RestrictAddToCart\Plugin\RestrictAddToCartPlugin"
+                sortOrder="10"
+                disabled="false" />
+        <plugin name="restrict_add_to_cart_update_item_plugin" 
+                type="Burstonline\RestrictAddToCart\Plugin\RestrictAddToCartPlugin" />
+    </type>
+    <type name="Magento\Quote\Model\Quote\Item">
+        <plugin name="restrict_add_to_cart_plugin_aroundUpdateItem"
+                type="Burstonline\RestrictAddToCart\Plugin\RestrictAddToCartPlugin"
+                sortOrder="10"
+                disabled="false" />
+    </type>
+</config>

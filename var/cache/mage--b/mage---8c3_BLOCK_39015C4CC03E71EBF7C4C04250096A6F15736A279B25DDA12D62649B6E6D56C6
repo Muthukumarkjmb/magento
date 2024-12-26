@@ -1,0 +1,20 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1734954564;s:6:"expire";i:1735040964;s:4:"tags";s:99:"8c3_CAT_C,8c3_STORE_GROUP,8c3_BLOCK_HTML,8c3_MAGICCART_MAGICMENU,8c3_MAGICCART_MAGICMENU_2,8c3_MAGE";}
+<nav class="navigation mean-nav navigation-mobile" role="navigation" data-action="navigation" data-exclude_html_desktop="1" >
+	<ul class="nav-mobile" data-alo-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+		<li class="level0 category-item level-top cat nav-1 "><a class="level-top" href="http://magentonew.com/camera.html"><span>Camera</span><span class="boder-menu"></span></a></li>
+<li class="level0 category-item level-top cat nav-2 "><a class="level-top" href="http://magentonew.com/dslr.html"><span>dslr</span><span class="boder-menu"></span></a></li>
+<li class="level0 category-item level-top cat nav-3 "><a class="level-top" href="http://magentonew.com/watch.html"><span>Watch</span><span class="boder-menu"></span></a></li>			</ul>
+</nav>
+			<div class="magicmenu clearfix" data-exclude_html_mobile="1" >
+		<ul class="nav-desktop  sticker hover"
+			data-fullwidth="0"
+			data-breakpoint="767"
+			data-event="hover"
+			>
+			<li class="level0 category-item level-top dropdown home"><a class="level-top" href="http://magentonew.com/"><span class="icon fa fa-home"></span><span class="icon-text">Home</span></a></li>			<li class="level0 category-item level-top cat nav-1 "><a class="level-top" href="http://magentonew.com/camera.html"><span>Camera</span><span class="boder-menu"></span></a></li>
+<li class="level0 category-item level-top cat nav-2 "><a class="level-top" href="http://magentonew.com/dslr.html"><span>dslr</span><span class="boder-menu"></span></a></li>
+<li class="level0 category-item level-top cat nav-3 "><a class="level-top" href="http://magentonew.com/watch.html"><span>Watch</span><span class="boder-menu"></span></a></li>					</ul>
+	</div>
+<script type="text/javascript">
+	require(['jquery','easing','magicmenu']);
+</script>

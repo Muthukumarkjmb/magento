@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <external_print>
+            <general>
+                <enabled/>
+                <location_id/>
+                <base_url/>
+                <endpoint_url/>
+            </general>
+        </external_print>
+    </default>
+</config>

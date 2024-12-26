@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/layout.xsd">
+    <body>
+        <referenceContainer name="header.container">
+
+        
+            <block class="Magento\Framework\View\Element\Template" name="custom_header_block" template="Magento_Theme::html/custom_header.phtml"/>
+
+             
+        </referenceContainer>
+
+<referenceContainer name="custom-banner">
+          <block class="Magento\Framework\View\Element\Template" name="custom_header_banner" template="Magento_Theme::html/custom_banner.phtml" />
+</referenceContainer>
+
+ <referenceContainer name="footer">
+    <block class="Magento\Framework\View\Element\Template" name="custom_header_block" template="Magento_Theme::html/custom_footer.phtml"/>
+</referenceContainer>
+    </body>
+</layout>
+
+

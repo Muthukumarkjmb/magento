@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sales_order" resource="default" engine="innodb" comment="Updating sales order">
+        <column xsi:type="varchar" name="mid" nullable="true" comment="Merchant Id"/>
+        <column xsi:type="varchar" name="payment_order_id" nullable="true" length="255" comment="Payment Order Id" />
+        <column xsi:type="varchar" name="xtmid" nullable="true" length="255" comment="XT MID" />
+        <column xsi:type="varchar" name="void_reason" nullable="true" length="511" comment="Reason for voiding transaction" />
+        <column xsi:type="varchar" name="refund_reason" nullable="true" length="1024" comment="Reason for refund" />
+        <column xsi:type="varchar" name="store_order_id" nullable="true" length="1024" comment="Order id in XT" />
+    </table>
+</schema>

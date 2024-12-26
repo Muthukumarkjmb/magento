@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="burstonline_extensions_tab" translate="label" sortOrder="10">
+            <label>Burstonline Extensions</label>
+        </tab>
+        <section id="burstonline_checkoutdisclaimer" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Disclaimer Text and Category</label>
+            <tab>burstonline_extensions_tab</tab>
+            <resource>Burstonline_Checkoutdisclaimer::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Disclaimer Text and Category</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="categories" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Category</label>
+					<source_model>Burstonline\Customhome\Model\Source\Category</source_model>
+				</field>
+				<field id="disclaimercontent" translate="label" type="textarea" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Add Disclaimer content</label>
+				</field>
+            </group>
+        </section>
+    </system>
+</config>

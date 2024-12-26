@@ -1,0 +1,36 @@
+<!-- ko if: isDisplayed() -->
+<!-- ko if: isTaxEnabled() -->
+<!-- ko if: isDisplayBoth() -->
+<tr class="totals fee excl" >
+    <th class="mark" colspan="2" scope="row">
+        <span data-bind="html: formattedFeeDetails"></span>
+    </th>
+    
+</tr>
+<tr class="totals fee incl">
+    <th class="mark" colspan="2" scope="row"><span data-bind="html: formattedFeeDetails"></span></th>
+    
+</tr>
+<!-- /ko -->
+<!-- ko ifnot: isDisplayBoth() -->
+<!-- ko if: displayExclTax() -->
+<tr class="totals fee excl" >
+    <th class="mark" colspan="2" scope="row"><span data-bind="html: formattedFeeDetails"></span></th>
+    
+</tr>
+<!-- /ko -->
+<!-- ko if: displayInclTax() -->
+<tr class="totals fee incl">
+    <th class="mark" colspan="2" scope="row"><span data-bind="html: formattedFeeDetails"></span></th>
+    
+</tr>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko ifnot: isTaxEnabled() -->
+<tr class="totals fee excl" >
+    <th class="mark" colspan="2" scope="row"><span data-bind="html: formattedFeeDetails"></span></th>
+    
+</tr>
+<!-- /ko -->
+<!-- /ko -->

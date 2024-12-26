@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="burstonline_feeconfig_listing_data_source" xsi:type="string">Burstonline\Feeconfig\Model\ResourceModel\Feeconfig\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Burstonline\Feeconfig\Model\ResourceModel\Feeconfig\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">burstonline_feesconfiguration</argument>
+            <argument name="resourceModel" xsi:type="string">Burstonline\Feeconfig\Model\ResourceModel\Feeconfig</argument>
+        </arguments>
+    </virtualType>
+</config>

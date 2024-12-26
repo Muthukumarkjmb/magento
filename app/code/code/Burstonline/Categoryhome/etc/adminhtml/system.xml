@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="burstonline_extensions_tab" translate="label" sortOrder="10">
+            <label>Burstonline Extensions</label>
+        </tab>
+        <section id="burstonline_categoryhome" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Home Category</label>
+            <tab>burstonline_extensions_tab</tab>
+            <resource>Burstonline_Categoryhome::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <!-- <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field> -->
+                <field id="categories" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category</label>
+                    <source_model>Burstonline\Customhome\Model\Source\Category</source_model>
+                </field>
+                <field id="product_count" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Count Per Page</label>
+                    <validate>validate-number validate-digits validate-greater-than-equals-3</validate>
+                </field>
+                <field id="total_products_count" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Total Product Count</label>
+                    <validate>validate-number validate-digits validate-greater-than-equals-3</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

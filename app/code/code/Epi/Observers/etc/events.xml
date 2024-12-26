@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+<event name="sales_order_save_after">
+ <!-- <event name="sales_order_place_after">  -->
+ <observer name="epi_checkout_submit_all_after" instance="Epi\Observers\OrderObserver\OrderObserver" />
+</event>
+   <event name="sales_quote_address_collect_totals_after">
+        <observer name="epi_add_custom_tax" instance="Epi\Observers\OrderObserver\AddCustomTax"/>
+    </event>
+</config>

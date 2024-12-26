@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <section id="burstonline_businesshours" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Delivery Business Hours</label>
+            <tab>burstonline_extensions_tab</tab>
+            <resource>Burstonline_Businesshours::config</resource>
+            
+            <group id="business_hours" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Business Hours</label>
+                <field id="monday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1">
+                    <label>Enable Monday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="monday_open"  translate="label" type="time" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="2" >
+                    <label>Monday Open</label>
+                    <!--<frontend_model>Burstonline\Businesshours\Block\Adminhtml\Form\Field\TimePicker</frontend_model>
+                    <depends>
+                        <field id="monday_enabled">1</field>
+                    </depends> -->
+                </field>
+                <field id="monday_close" translate="label" type="time" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Monday Close</label>
+                </field>
+
+                <field id="tuesday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="4" >
+                    <label>Enable Tuesday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="tuesday_open" translate="label" type="time" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday Open</label>
+                </field>
+                <field id="tuesday_close" translate="label" type="time" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday Close</label>
+                </field>
+                
+                <field id="wednesday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="7" >
+                    <label>Enable Wednesday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="wednesday_open" translate="label" type="time" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday Open</label>
+                </field>
+                <field id="wednesday_close" translate="label" type="time" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday Close</label>
+                </field>
+
+                <field id="thursday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" >
+                    <label>Enable Thursday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="thursday_open" translate="label" type="time" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday Open</label>
+                </field>
+                <field id="thursday_close" translate="label" type="time" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday Close</label>
+                </field>
+
+                <field id="friday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="13" >
+                    <label>Enable Friday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="friday_open" translate="label" type="time" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday Open</label>
+                </field>
+                <field id="friday_close" translate="label" type="time" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday Close</label>
+                </field>
+
+                <field id="saturday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="16" >
+                    <label>Enable Saturday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="saturday_open" translate="label" type="time" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday Open</label>
+                </field>
+                <field id="saturday_close" translate="label" type="time" sortOrder="18" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday Close</label>
+                </field>
+
+                <field id="sunday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="19" >
+                    <label>Enable Sunday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sunday_open" translate="label" type="time" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday Open</label>
+                </field>
+                <field id="sunday_close" translate="label" type="time" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday Close</label>
+                </field>
+
+            </group>
+        </section>
+        <section id="burstonline_pickuphours" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Pickup Business Hours</label>
+            <tab>burstonline_extensions_tab</tab>
+            <resource>Burstonline_Businesshours::config</resource>
+            
+            <group id="pickup_business_hours" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Business Hours</label>
+                <field id="pickup_monday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1">
+                    <label>Enable Monday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pickup_monday_open"  translate="label" type="time" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="2" >
+                    <label>Monday Open</label>
+                    <!--<frontend_model>Burstonline\Businesshours\Block\Adminhtml\Form\Field\TimePicker</frontend_model>
+                    <depends>
+                        <field id="monday_enabled">1</field>
+                    </depends> -->
+                </field>
+                <field id="pickup_monday_close" translate="label" type="time" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Monday Close</label>
+                </field>
+
+                <field id="pickup_tuesday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="4" >
+                    <label>Enable Tuesday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pickup_tuesday_open" translate="label" type="time" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday Open</label>
+                </field>
+                <field id="pickup_tuesday_close" translate="label" type="time" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday Close</label>
+                </field>
+                
+                <field id="pickup_wednesday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="7" >
+                    <label>Enable Wednesday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pickup_wednesday_open" translate="label" type="time" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday Open</label>
+                </field>
+                <field id="pickup_wednesday_close" translate="label" type="time" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday Close</label>
+                </field>
+
+                <field id="pickup_thursday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" >
+                    <label>Enable Thursday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pickup_thursday_open" translate="label" type="time" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday Open</label>
+                </field>
+                <field id="pickup_thursday_close" translate="label" type="time" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday Close</label>
+                </field>
+
+                <field id="pickup_friday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="13" >
+                    <label>Enable Friday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pickup_friday_open" translate="label" type="time" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday Open</label>
+                </field>
+                <field id="pickup_friday_close" translate="label" type="time" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday Close</label>
+                </field>
+
+                <field id="pickup_saturday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="16" >
+                    <label>Enable Saturday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pickup_saturday_open" translate="label" type="time" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday Open</label>
+                </field>
+                <field id="pickup_saturday_close" translate="label" type="time" sortOrder="18" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday Close</label>
+                </field>
+
+                <field id="pickup_sunday_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="19" >
+                    <label>Enable Sunday</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pickup_sunday_open" translate="label" type="time" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday Open</label>
+                </field>
+                <field id="pickup_sunday_close" translate="label" type="time" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday Close</label>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
+

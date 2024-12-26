@@ -1,0 +1,95 @@
+<style> .columns .column.main { padding-bottom: 0; } .pagination-home .pages a.page { color: #000; }</style><?php $bannerimage = $block->getBottombanner(); ?> <div id="star-products"></div><div class="container-fluid con-flu p-0"><div class="row"><div class="col-md-6 m-0 py-5" style="display:table"><div class="exp-div"><?php echo $bannerimage['des']; ?></div></div><div class="col-md-6 bot-ban p-0"><img src="<?php echo $bannerimage['img']; ?>"></div></div></div><script type="text/javascript">
+    require(['jquery', 'mage/cookies'], function($) {
+        $(document).ready(function() {
+            $(document).on('submit', '.add-to-cart-form', function(e) {
+                e.preventDefault(); 
+                var form = $(this);
+                var actionUrl = form.attr('action');
+                var formData = form.serialize(); 
+                var submitButton = form.find('button[type="submit"]');
+                var formKey = $.cookie('form_key');
+                formData += '&form_key=' + formKey;
+                
+                submitButton.prop("disabled", true);
+
+                $.ajax({
+                    url: actionUrl,
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    cache: false,
+                    success: function(response) {
+                        if (response.success) {
+                            
+                            
+                        } else {
+                            
+                            
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        
+                        
+                    },
+                    complete: function() {
+                        
+                        setTimeout(() => {
+                            submitButton.prop("disabled", false);
+                        }, 100)
+                    }
+                });
+            });
+            var baseUrl = '<?php echo $block->getBaseUrl(); ?>';
+            var currentPage = 1;
+            var formKey = $('input[name="form_key"]').val();
+            var scrollCheck = false;
+
+            function loadPage(page) {
+                $.ajax({
+                    url: baseUrl + 'burstonline/featured/pagination',
+                    type: 'GET',
+                    dataType: 'json',
+                    cache: false,
+                    data: {
+                        p: page,
+                        formKey: formKey
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            setTimeout(() => {
+                                
+                                $('#star-products .homepage-featured-products').remove();
+                                $('#star-products').html(response.html);
+                                if (scrollCheck) {
+                                    $('html, body').animate({
+                                        scrollTop: $('#star-products').offset().top
+                                    }, 100);
+                                }
+                            }, 500)
+                        } else {
+                            console.error('Error:', response.error);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('AJAX Error:', textStatus);
+                    }
+                });
+            }
+
+            $(document).on('click', '.pagination-home .pages-items a', function(e) {
+                e.preventDefault();
+                $('#bootstrap-loader').show();
+                scrollCheck = true;
+                var page = $(this).data('page');
+                loadPage(page);
+            });
+            loadPage(currentPage);
+
+            $(document).on('click', '.prod-img.box1', function(e) {
+            var url = $(this).data('url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
+        });
+    });</script><style> .homepage-featured-products .pages .action{border:none;} .pagination-home .pages a.page,.product-item1 .price{font-family: MontserratMedium;} .homepage-featured-products h1{text-transform:none;}</style>

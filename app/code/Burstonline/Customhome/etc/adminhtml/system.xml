@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="burstonline_extensions_tab" translate="label" sortOrder="10">
+            <label>Burstonline Extensions</label>
+        </tab>
+        <section id="burstonline_customhome" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Custom Home</label>
+            <tab>burstonline_extensions_tab</tab>
+            <resource>Burstonline_Customhome::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="categories" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Category</label>
+					<source_model>Burstonline\Customhome\Model\Source\Category</source_model>
+				</field>
+				<field id="first_image" translate="label" type="image" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Shop 1st Image</label>
+					<backend_model>Burstonline\Customhome\Model\Source\Image</backend_model>
+					<base_url type="media">customhome</base_url>
+				</field>
+				<field id="first_image_url" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Redirect Url</label>
+				</field>
+				<field id="second_image" translate="label" type="image" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Shop 2nd Image</label>
+					<backend_model>Burstonline\Customhome\Model\Source\Image</backend_model>
+					<base_url type="media">customhome</base_url>
+				</field>
+				<field id="second_image_url" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Redirect Url</label>
+				</field>
+				<field id="bottom_image" translate="label" type="image" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Upload bottom banner Image</label>
+					<backend_model>Burstonline\Customhome\Model\Source\Image</backend_model>
+					<base_url type="media">customhome</base_url>
+				</field>
+				<field id="bottom_img_description" translate="label" type="textarea" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Add description</label>
+				</field>
+            </group>
+        </section>
+    </system>
+</config>

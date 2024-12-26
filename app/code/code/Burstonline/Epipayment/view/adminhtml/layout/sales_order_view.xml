@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="sales_order_tabs">
+            <block class="Burstonline\Epipayment\Block\Adminhtml\Order\View\Tab\Epilog" 
+                   name="epi_log" 
+                   template="Burstonline_Epipayment::order/view/tab/epilog.phtml" 
+                   cacheable="false"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">Epipayment</argument>
+                <argument name="block" xsi:type="string">epi_log</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="order_cancel">
+            <action method="setCanCancel">
+                <argument name="value" xsi:type="boolean">true</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

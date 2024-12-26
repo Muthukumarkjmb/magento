@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+      <!-- <referenceBlock name="my-account-link" remove="true" /> -->
+     <referenceBlock name="top.links">
+         <block class="Epi\PendingItemsTopLink\Block\Link" name="custom-header-link" before="my-account-link">
+             <arguments>
+     <argument name="label" xsi:type="string" translate="true">Pending Order Items</argument>
+     <argument name="path" xsi:type="string" translate="true">pendingorders/index/index</argument>
+     </arguments>
+         </block>
+     </referenceBlock>
+</body>
+</page>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Burstonline_Feeconfig::menu_item"
+			title="Fee Configuration" module="Burstonline_Feeconfig"
+			sortOrder="10" parent="Burstonline_Importproduct::burstonline"
+			action="feeconfig/store/index"
+			resource="Burstonline_Feeconfig::menu_item"
+        />
+    </menu>
+</config>

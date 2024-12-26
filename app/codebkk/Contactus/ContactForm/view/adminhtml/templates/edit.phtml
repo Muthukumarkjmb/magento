@@ -1,0 +1,23 @@
+<?php
+$contact = $block->getContactData();
+
+echo '<pre>';
+print_r($contact->getData());
+echo '</pre>';
+?>
+<form action="<?php echo $block->getUrl('contactus/contactform/save'); ?>" method="post">
+    <input type="hidden" name="id" value="<?php echo $contact->getId(); ?>"/>
+    <div>
+        <label>Name:</label>
+        <input type="text" name="name" value="<?php echo $contact->getName(); ?>"/>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" value="<?php echo $contact->getEmail(); ?>"/>
+    </div>
+    <div>
+        <label>Message:</label>
+        <textarea name="message"><?php echo $contact->getMessage(); ?></textarea>
+    </div>
+    <button type="submit">Save</button>
+</form>

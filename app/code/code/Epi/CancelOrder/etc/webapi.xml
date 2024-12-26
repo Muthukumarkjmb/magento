@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:webapi:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/order/cancel/" method="POST">
+        <service class="Epi\CancelOrder\Api\OrderCancellationInterface" method="cancelOrder"/>
+        <resources>
+            <!-- <resource ref="Magento_Sales::actions_cancel"/> -->
+            <resource ref="Epi_CancelOrder::cancel_order"/>
+        </resources>
+    </route>
+</routes>

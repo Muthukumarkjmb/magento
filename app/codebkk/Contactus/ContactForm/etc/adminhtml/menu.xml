@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+		<add id="Contactus_ContactForm::menu"
+			title="Contactform" module="Contactus_ContactForm"
+			sortOrder="10"
+			resource="Magento_Backend::content"
+        />
+        <add id="Contactus_ContactForm::menu_item"
+			title="Contact Users" module="Contactus_ContactForm"
+			sortOrder="10" parent="Contactus_ContactForm::menu"
+			action="contactus/index/grid"
+			resource="Contactus_ContactForm::menu_item"
+        />
+    </menu>
+
+    <menu>
+    <add id="Contactus_ContactForm::contactform_submissions"
+         title="Contact users"
+         module="Contactus_ContactForm"
+         sortOrder="100"
+         resource="Magento_Backend::content"
+         action="contactus/submission/index"/>
+	</menu>
+</config>

@@ -1,0 +1,74 @@
+<fieldset data-bind="attr: {class: 'fieldset payment items ccard ' + getCode(), id: 'payment_form_' + getCode()}">
+    <h3>Credit Card Information</h3><br />
+    <div class="field type">
+        <div class="control">
+            <ul class="credit-card-types">
+                <!-- ko foreach: {data: getCcAvailableTypesValues(), as: 'item'} -->
+                <li class="item" data-bind="css: {
+                                                 _active: $parent.selectedCardType() == item.value,
+                                                 _inactive: $parent.selectedCardType() != null && $parent.selectedCardType() != item.value
+                                                 } ">
+                </li>
+                <!--/ko-->
+            </ul>
+            <input type="hidden"
+                   name="payment[cc_type]"
+                   class="input-text cc_type"
+                   value=""
+                   data-bind="value: creditCardType
+                   ">
+        </div>
+    </div>
+    
+    <div class="field text required">
+        <div class="control">
+            <input type="text" placeholder="Customer Name" name="payment[customer_name]" maxlength="16" class="input-text customer_name" value=""
+                   data-bind="value: creditCustomerName, valueUpdate: 'keyup' "/>
+        </div>
+    </div>
+    <div class="field number required">
+        <div class="control">
+            <input type="number" placeholder="Card Number" name="payment[cc_number]" maxlength="16" class="input-text cc_number" value=""
+                   data-bind="value: creditCardNumber, event: { keyup: updateCardType }"/><img class="cardImg" src='/media/burstonline/cards/default.png' data-bind="attr: { src: cardTypeImageUrl }" alt="Card Type" />
+                              
+        </div>
+    </div>
+    <div class="field date required" data-bind="attr: {id: getCode() + '_cc_type_exp_div'}">
+        <div class="control">
+            <div class="fields group group-2">
+                <div class="field no-label month">
+                    <div class="control">
+                        <input type="number" name="payment[cc_exp_month]" maxlength="16" class="input-text cc_exp_month" placeholder="MM" value=""
+                               data-bind="value: creditCardExpMonth, valueUpdate: 'keyup' "/>
+                                          
+                        <input type="number" name="payment[cc_exp_year]" maxlength="16" class="input-text cc_exp_year" value="" placeholder="YYYY" 
+                               data-bind="value: creditCardExpYear, valueUpdate: 'keyup' "/>
+                        <input type="number"  placeholder="CVV" maxlength="3" autocomplete="off" class="input-text cvv cc_cid"
+                        name="payment[cc_cid]"
+                        value=""
+                        data-bind="value: creditCardVerificationNumber" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</fieldset>
+<style>
+.field.date input.cc_exp_month, .field.date input.cc_exp_year, .field.date input.cc_cid
+{ display: inline; width: 66px; }
+.field .control{
+    padding-left: 0;
+}
+.checkout-payment-method .input-text {
+    width: 225px;
+}
+.cardImg {
+    width: 30px;
+    margin-left: -8%;
+    margin-top: -1%;
+}
+.checkout-payment-method .payment-method-content .fieldset>.field {
+    margin: 0 0 10px;
+}
+</style>

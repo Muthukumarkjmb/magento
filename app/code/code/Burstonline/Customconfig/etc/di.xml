@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<!--<type name="Magento\Quote\Model\Quote\Address\Rate">
+		<plugin name="nonlmp_shipping_price" type="Burstonline\Customconfig\Plugin\Quote\Address\Rate"/>
+	</type>-->
+	<type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="save_custom_fee_in_quote" type="Burstonline\Customconfig\Plugin\Checkout\Model\ShippingInformationManagement" sortOrder="1"/>
+    </type>
+
+</config>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Burstonline_Importproduct::burstonline" title="Burstonline" module="Burstonline_Importproduct" sortOrder="51" resource="Burstonline_Importproduct::burstonline"/>
+        <add id="Burstonline_Importproduct::importlog" title="Manage Logs" module="Burstonline_Importproduct" sortOrder="10" action="burstonline_importproduct/importlog" resource="Burstonline_Importproduct::importlog" parent="Burstonline_Importproduct::burstonline"/>
+        <add id="Burstonline_Importproduct::import_configuration" title="Configuration" module="Burstonline_Importproduct" sortOrder="99" parent="Burstonline_Importproduct::burstonline" action="adminhtml/system_config/edit/section/burstonline" resource="Burstonline_Importproduct::burstonline_configuration"/>
+    </menu>
+</config>

@@ -1,0 +1,180 @@
+<?php
+/**
+ * @var $block \Burstonline\Epipayment\Block\Adminhtml\Order\View\Tab\Epilog
+ */
+?>
+ 
+<div class="fieldset-wrapper order-information">
+    <div class="fieldset-wrapper-title">
+       <span class="title"><?php /* @escapeNotVerified */
+         echo $block->getTitle();   ?></span>
+         
+    </div>
+    <?php 
+        $apirequestData = $apiresponseData = "No data found for this call";
+        $id = 0;
+    ?>
+    <!-- Get Token Auth API log -->
+        <?php 
+            $tokenauth = $this->getApidata('tokenauth');
+            echo $tokenauth; 
+            $createorderlog = $this->getApidata('createorderlog');
+            echo $createorderlog; 
+            $tokenexlog = $this->getApidata('tokenexlog');
+            echo $tokenexlog; 
+            $paymentauth = $this->getApidata('paymentauth');
+            echo $paymentauth; 
+            $completionlog = $this->getApidata('completionlog');
+            echo $completionlog; 
+            $xtlog = $this->getApidata('xtlog');
+            echo $xtlog;
+            $refund = $this->getApidata('refund');
+            if(!empty($refund) || $refund != "No data") { echo $refund; }
+            $Cancel = $this->getApidata('Cancel');
+            if(!empty($Cancel) || $Cancel != "No data") { echo $Cancel; }
+        ?>
+   
+</div>
+<div id="modalpopup">
+    <div class="modalcontent">
+        <!-- <span class="close"> X </span> -->
+        <div class="apidata"></div>
+    </div>
+</div>
+<style>
+    .successmark::before {
+    content: '\2713';
+    font-size: 2.5rem;
+    display: inline-block;
+    color: green;
+    font-weight: bold;
+}
+.failmark::before {
+    content: '\00D7';
+    font-size: 2.5rem;
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+.notyetmark::before {
+    content: '\0021';
+    font-size: 2.5rem;
+    display: inline-block;
+    color: #ffc700;
+    font-weight: bold;
+}
+.syncmark::before {
+    content: '\21c6';
+    font-size: 2rem;
+    display: inline-block;
+    color: #276327;
+    font-weight: bold;
+}
+button.syncorder {
+    padding: 0.15rem 0.75rem;
+    margin-left: 1rem;
+}
+
+.hide{
+    display : none;
+}
+#modalpopup
+{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #666666b5;
+    max-width: 100%;
+    z-index: +1;
+    word-break: break-all;
+    padding: 2%;
+}
+.modalcontent {
+    width: 75%;
+    margin: auto;
+}
+.apidata {
+    background: #f5f5f5;
+    width: 100%;
+    max-height: 80vh;
+    margin: 5% auto;
+    padding: 1.5%;
+    overflow-y: scroll;
+}
+/*span.close {
+    font-size: 2rem;
+    font-weight: bold;
+    float: right;
+    margin-top: -4%;
+    display: inline-block;
+    cursor: pointer;
+}*/
+</style>
+
+<script>
+require([
+    'jquery',
+    'mage/url'
+], function($, url){
+    $('.apirequest').click(function(){
+        var id = $(this).attr("id");
+        var apirequestdata = $('.requestData'+id).html();
+        $('.apidata').html(apirequestdata);
+        $('#modalpopup').show();
+        return false;
+    });
+    $('.apiresponse').click(function(){
+        var id = $(this).attr("id");
+        var apiresponsedata = $('.responseData'+id).html();
+        $('.apidata').html(apiresponsedata);
+        $('#modalpopup').show();
+        return false;
+    });
+
+    $('#modalpopup').click(function(){
+        $('#modalpopup').hide();
+        return false;
+    });
+
+    $('.syncorder').click(function(){
+        
+        $(this).prop('disabled', true);
+        var orderID = <?php echo $block->getOrder()->getEntityId(); ?>;
+        //alert(orderID);
+        $.ajax({
+                url: url.build('/admin/epipayment/index/orderxtcall'), // Replace with your controller URL
+                type: 'POST',
+                data: {form_key: window.FORM_KEY, orderId: orderID}, // Send any required data
+                showLoader: true, // Show the Magento loader
+                success: function (response) {
+                    if (response.success) {
+                        alert('Order data successfully synched.');
+                        window.location.href="#sales_order_view_tabs_Epipayment_content";
+                        window.location.reload();
+                    } else {
+                        alert('An error occurred. Please try again.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while processing the request.');
+                },
+                showLoader: false
+            });
+    });
+
+    if (window.location.hash === '#sales_order_view_tabs_Epipayment_content') {
+        setTimeout(function() {
+            // Ensure the tab element exists before triggering the click
+            var tabContent = $('#sales_order_view_tabs_Epipayment_content');
+            if (tabContent.length) {
+                $('.ui-tabs-panel').hide();
+                $('#sales_order_view_tabs_Epipayment_content').show();
+            }
+        }, 2000); // Delay to ensure DOM is ready and tabs are initialized
+    }
+
+});
+</script>

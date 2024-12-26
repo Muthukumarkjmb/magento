@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/ObjectManager/etc/config.xsd">
+    
+    <!-- Grid Configuration -->
+    <virtualType name="Contactus\ContactForm\Model\ResourceModel\Submission\Grid\Collection" 
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">submission</argument>
+            <argument name="resourceModel" xsi:type="string">Contactus\ContactForm\Model\ResourceModel\Submission</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="contact_form_submissions_listing_grid_data_source" xsi:type="string">
+                    Contactus\ContactForm\Model\ResourceModel\Submission\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Factory Configuration -->
+    <type name="Contactus\ContactForm\Model\ContactFactory">
+        <arguments>
+            <argument name="instance" xsi:type="string">Contactus\ContactForm\Model\Contact</argument>
+        </arguments>
+    </type>
+
+  <type name="Contactus\ContactForm\Controller\Adminhtml\Submission\Index">
+        <arguments>
+            <argument name="logger" xsi:type="object">Psr\Log\LoggerInterface</argument>
+        </arguments>
+    </type>
+  
+
+    
+</config>

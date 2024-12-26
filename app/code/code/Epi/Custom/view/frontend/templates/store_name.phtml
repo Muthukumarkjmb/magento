@@ -1,0 +1,25 @@
+<?php 
+   $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+   $customerSession = $objectManager->create('\Magento\Framework\Session\SessionManagerInterface');
+   $mName=$customerSession->getMname();
+   $mAddress=$customerSession->getMaddress();
+   $mPhone=$customerSession->getMphone();
+   $mTime=$customerSession->getMtiming();
+?>
+<style>
+
+   .storeDetails {
+      text-align: right;
+      background-position: right;
+   }
+   .storeDetails p{
+      margin-bottom:0;
+   }
+ 
+</style>
+<div class="storeDetails">
+<h2><?= $mName ?></h2>
+<p><?= $mAddress ?></p>
+<p><?= $mPhone ?></p>
+<p><?= $mTime ?></p>
+</div>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config>
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="epi_shipping_restriction_shippinginformationmanagement"
+                type="Epi\ShippingRestriction\Plugin\ShippingInformationManagementPlugin" sortOrder="2"/>
+    </type>
+</config>

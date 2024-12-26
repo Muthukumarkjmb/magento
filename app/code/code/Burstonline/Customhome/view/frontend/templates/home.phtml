@@ -1,0 +1,47 @@
+<?php 
+$shopimages=$block->getShopimages();
+//print_r($shopimages);
+?>
+<div class="shopcategory">
+	<?php $i=1;
+	 foreach($shopimages as $img){?>
+		<div class="<?php if($i==1){echo 'firstcat';}else{echo 'secondcat';}?>">
+			<a href="<?php echo $img['url'];?>"><img src="<?php echo $img['img'];?>"></a>			
+		</div>
+	<?php $i++;} ?>
+</div>
+<?php 
+$bannerimage=$block->getBottombanner();
+?>
+<!-- <div class="bottom-banner">
+	<img src="<?php echo $bannerimage['img'];?>">
+	<div class="desc">
+		<div><img src="<?php echo $block->getViewFileUrl('Burstonline_Customhome::images/Logo-white1.png'); ?>"></div>
+		<?php echo $bannerimage['des'];?>
+	</div>
+</div> -->
+
+<style>
+
+.shopcategory{margin-top:40px;}
+.shopcategory > div{width:48%;margin-bottom:4%;float:left;}
+.shopcategory .firstcat{margin-right:2%;}
+.shopcategory .secondcat{margin-left:2%;}
+.bottom-banner{position:relative;}
+.bottom-banner .desc{position:absolute;top:10%;right:5%;width:315px;}
+
+.home-wrapper{margin-top:4em;}
+@media (min-width: 769px){
+	.home-wrapper,.browsecategory .categorieslist{
+		box-sizing: border-box;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1280px;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: auto;
+    }
+}
+</style>
+
+

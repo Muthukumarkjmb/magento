@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+    <route method="POST" url="/V1/epi/fulfillment-api/">
+        <service class="Epi\FulfillmentApi\Api\CustomInterface" method="getPost"/>
+        <resources>
+            <resource ref="Epi_FulfillmentApi::fulfillment_post"/>
+        </resources>
+    </route>
+    <route method="POST" url="/V1/epi/payment/voidTransaction/">
+        <service class="Epi\FulfillmentApi\Api\VoidTransactionInterface" method="voidTransaction"/>
+        <resources>
+            <resource ref="Epi_FulfillmentApi::void_post"/>
+        </resources>
+    </route>
+    <route method="POST" url="/V1/epi/payment/refundTransaction/">
+        <service class="Epi\FulfillmentApi\Api\RefundTransactionInterface" method="refundTransaction"/>
+        <resources>
+            <resource ref="Epi_FulfillmentApi::refund_post"/>
+        </resources>
+    </route>
+        <route method="GET" url="/V1/epi/order/:entityId">
+        <service class="Epi\FulfillmentApi\Api\OrderInterface" method="getOrderDetails"/>
+        <resources>
+            <resource ref="Epi_FulfillmentApi::order"/>
+        </resources>
+    </route>
+</routes>

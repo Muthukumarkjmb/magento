@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <Customconfig>
+            <Customconfig>
+                <status>1</status>
+            </Customconfig>
+        </Customconfig>
+        <Customconfig>
+            <Customconfig>
+                <name>Extra Fee</name>
+            </Customconfig>
+        </Customconfig>
+		<Customconfig>
+            <Customconfig>
+                <Customconfig_amount>5</Customconfig_amount>
+            </Customconfig>
+        </Customconfig>
+    </default>
+</config>

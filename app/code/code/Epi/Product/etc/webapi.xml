@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+    <route method="POST" url="/V1/epi/product/">
+        <service class="Epi\Product\Api\UpdateProductInterface" method="updateProduct"/>
+        <resources>
+            <resource ref="Epi_Product::update_product"/>
+        </resources>
+    </route>
+     <route method="POST" url="/V1/epi/product/bulk-update-prices">
+        <service class="Epi\Product\Api\UpdatePricesInterface" method="updatePrices"/>
+        <resources>
+            <resource ref="Epi_Product::update_product_prices"/>
+        </resources>
+    </route>
+</routes>

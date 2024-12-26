@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <type name="Magento\Catalog\Model\Config">
+		<plugin name="catalog_config_plugin" type="Burstonline\Saleablefilter\Plugin\Config"/>
+	</type>
+    <type name="Magento\Elasticsearch\Model\Adapter\BatchDataMapper\ProductDataMapper">
+        <plugin name="add_data_to_mappers_result" type="Burstonline\Saleablefilter\Plugin\Model\Adapter\BatchDataMapper\ProductDataMapperPlugin"/>
+    </type>
+</config>

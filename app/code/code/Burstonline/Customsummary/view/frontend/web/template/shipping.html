@@ -1,0 +1,14 @@
+<div class="shipping-information">
+    <h2 data-bind="i18n: 'Shipping Information'"></h2>
+    <div id="shipping" class="step-content" data-role="content">
+        <div class="field" id="shipping-new-address-form">
+            <!-- ko template: 'Magento_Checkout/shipping-address/form' --><!-- /ko -->
+        </div>
+        <div class="order-summary" data-bind="visible: isOrderSummaryVisible">
+            <h2>Order Summary</h2>
+            <div data-bind="scope: 'block-summary'">
+                <div data-bind="template: { name: 'Magento_Checkout/summary' }"></div>
+            </div>
+        </div>
+    </div>
+</div>

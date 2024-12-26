@@ -1,0 +1,25 @@
+<?xml version='1.0'?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch">
+        <observer name="EpiPay_controller_dispatch" 
+            instance="Epi\EpiPay\Model\Observer\ControllerActionPredispatch" shared="false" />
+    </event>
+    <!-- <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="checkcout_page" instance="Epi\EpiPay\Model\Observer\CheckShoppingCartObserver" />
+    </event> -->
+<!-- Event called when shipping details is added by merchant -->
+     <!-- <event name="sales_order_shipment_save_after">
+        <observer name="EpiPay_log_shipment"
+            instance="Epi\EpiPay\Model\Observer\SalesOrderShipmentAfter" />
+    </event> -->
+    <!-- <event name="checkout_onepage_controller_success_action">
+        <observer name="checkout_controller_success_action" 
+            instance="Epi\EpiPay\Model\Observer\AfterPlaceOrder"  />
+    </event> -->
+    <!-- <event name="controller_action_predispatch_checkout_cart_add">
+        <observer name="restrict_add_to_cart" instance="Epi\EpiPay\Model\Observer\RestrictAddToCart" />
+    </event> -->
+    <!-- <event name="wishlist_add_product">
+        <observer name="restrict_add_to_wishlist" instance="Epi\EpiPay\Model\Observer\RestrictAddToWishlist" />
+    </event> -->
+</config>

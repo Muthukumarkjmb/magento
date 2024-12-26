@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="epipayment" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Epi Payment</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="business_name" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Business Name</label>
+                </field>
+                <field id="batch_no" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Batch Number</label>
+                </field>
+                <field id="testmode" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sandbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_url" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API URL</label>
+                </field>
+                <field id="token_key" translate="label" type="obscure" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token Key</label>
+                    <backend_model>Burstonline\Epipayment\Model\Config\Backend\CustomEncrypted</backend_model>
+                </field>
+                <field id="token_secret" translate="label" type="obscure" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token Secret</label>
+                    <backend_model>Burstonline\Epipayment\Model\Config\Backend\CustomEncrypted</backend_model>
+                </field>
+                <field id="tokenex_api_url" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tokenex API URL</label>
+                </field>
+                <field id="token_scheme" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token Scheme</label>
+                </field>
+                <field id="token_id" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token Id</label>
+                </field>
+                <field id="token_api_key" translate="label" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Token Api Key</label>
+                    <backend_model>Burstonline\Epipayment\Model\Config\Backend\CustomEncrypted</backend_model>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="11" showInDefault="160" showInWebsite="1" showInStore="0">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
+                </field>
+                <field id="service_fee" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Service Fee</label>
+                </field>
+                <field id="xtapi_url" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>XT API URL</label>
+                </field>
+                
+                <field id="xtauth_key" translate="label" type="obscure" sortOrder="16" showInDefault="1" showInWebsite="1">
+                    <label>Auth Key</label>
+                    <backend_model>Burstonline\Epipayment\Model\Config\Backend\CustomEncrypted</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <burstonline_customconfig>
+		<order_config>
+			<min_order_total>0</min_order_total>
+			<max_order_total>0</max_order_total>
+		</order_config>
+		<product_non_lmp>
+			<price>0</price>
+			<low_level_qty>5</low_level_qty>
+		</product_non_lmp>
+    </burstonline_customconfig>
+</config>

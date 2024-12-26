@@ -1,0 +1,11 @@
+{
+    "sales_order": {
+        "column": {
+            "mid": true,
+            "payment_order_id": true,
+            "xtmid": true,
+            "void_reason": true,
+            "refund_reason": true
+        }
+    }
+}

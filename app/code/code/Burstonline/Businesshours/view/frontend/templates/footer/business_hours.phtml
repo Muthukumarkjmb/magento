@@ -1,0 +1,11 @@
+<?php
+$daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+?>
+<ul class="business-hours">
+    <?php foreach ($daysOfWeek as $day): ?>
+        <li>
+            <strong><?php echo $day; ?> : </strong> 
+            <?php echo $block->getOpenTime($day); ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

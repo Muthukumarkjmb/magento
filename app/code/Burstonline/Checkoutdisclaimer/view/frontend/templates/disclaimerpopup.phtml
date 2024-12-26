@@ -1,0 +1,31 @@
+<?php $isAlcoholExist=$block->isAlcoholExist(); 
+//print_r($isAlcoholExist);//die;
+if(!empty($isAlcoholExist) && !empty($block->getDisclaimercontent())){
+?>
+<script>
+require(
+    [
+        'jquery'
+    ],
+    function(
+        $
+    ) {
+        $( document ).ready(function() {
+            console.log("disclaimer start");
+            var checkExist = setInterval(function() {
+                if ($('.items-in-cart').length) {
+                    console.log($('.items-in-cart').html());
+                    var disclaimerContent = "<p class='disclaimercontent'><?php echo $block->getDisclaimercontent(); ?></p>";
+                    $('.items-in-cart').append(disclaimerContent);
+                    clearInterval(checkExist); // Stop checking once the div is found
+                }
+            }, 1000);
+            
+        });     
+    }
+);
+</script>
+<style>
+p.disclaimercontent{padding-top:2rem; font-size: 15px;font-family: MontserratRegular;}
+</style>
+<?php } ?>

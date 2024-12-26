@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1734723885;s:6:"expire";i:9999999999;s:4:"tags";s:19:"8c3_CONFIG,8c3_MAGE";}
+{"Amasty_StorePickupWithLocator":{"handles":{"checkout_cart_index":"checkout_cart_index","checkout_index_index":"checkout_index_index"},"ifconfig":["carriers\/amstorepickup\/active"],"cssOptions":{"fileName":"ampickup","path":"css\/source\/mkcss"}}}
